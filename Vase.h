@@ -8,27 +8,34 @@ private:
 private:
 	char material[20];
 public:
-	void getVolume();
-	void getWeight();
-	void getMaterial();
+	void getVolume(); // Оголошення функції об'єму.
+	void getWeight(); // Оголошення функції маси.
+	void getMaterial(); // Оголошення функції типу матеріала.
 
-	VaseA(32, 12, Rock);
-	cout << a.getVolume << endl;
-	cout << a.getWeight << endl;
-	cout << a.getMaterial << endl;
-	
-	VaseB(65, 63, Marmur);
-	cout << b.getVolume << endl;
-	cout << b.getWeight << endl;
-	cout << b.getMaterial << endl;
-	
-	VaseC(17, 84, Iron);
-	cout << c.getVolume << endl;
-	cout << c.getWeight << endl;
-	cout << c.getMaterial << endl;	
-protected:
+	Vase() {}
 
-protected:
+	Vase(double volume, double weight, char material) {
+		this->volume = volume; // об'єм.
+		this->weight = weight; // маса.
+		this->material = material; // матеріал.
+
+		print();
+	}
+
+	void getValues(int height, float speed, string name) {
+		this->volume = volume;
+		this->weight = weight;
+		this->material = material;
+	}
+
+	void print() {
+		cout << this->volume << " - " << this->weight << " - " << this->material << endl;
+
+	}
+
+	~Vase() { // Деструктор який виводить "Все нормально!"
+		cout << "All is okay!" << endl;
+	}
 
 };
 
